@@ -10,6 +10,9 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-session&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-session)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-session&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-session)
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/benanamen/perfect-session/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/benanamen/perfect-session/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/benanamen/perfect-session/badges/build.png?b=master)](https://scrutinizer-ci.com/g/benanamen/perfect-session/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/benanamen/perfect-session/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 
 # Session Class
 
