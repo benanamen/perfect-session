@@ -1,3 +1,16 @@
+[![codecov](https://codecov.io/gh/benanamen/perfect-session/branch/main/graph/badge.svg?token=50SIWrTfNG)](https://codecov.io/gh/benanamen/perfect-session)
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-session&metric=bugs)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-session)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-session&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-session)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-session&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-session)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-session&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-session)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-session&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-session)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-session&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-session)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-session&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-session)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-session&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-session)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=benanamen_perfect-session&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=benanamen_perfect-session)
+
+
 # Session Class
 
 The` Session` class provides a simple and convenient way to manage PHP sessions.
