@@ -1,0 +1,36 @@
+{
+  "name": "krubio/perfect-session",
+  "description": "Session Handling",
+  "keywords": [
+    "Session",
+    "Sessions"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kevin Rubio",
+      "email": "ducatikevin@yahoo.com",
+      "homepage": "https://github.com/benanamen/perfect-session",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.0.0",
+    "phpstan/phpstan": "^1.10"
+  },
+  "require-dev": {
+    "codeception/codeception": "^5.0",
+    "codeception/module-asserts": "*",
+    "jaschilz/php-coverage-badger": "^2.0"
+  },
+  "scripts": {
+    "test": [
+      "php vendor/bin/codecept run --coverage --coverage-html  --coverage-xml"
+    ]
+  },
+  "autoload": {
+    "psr-4": {
+      "PerfectApp\\": "src/"
+    }
+  }
+}
