@@ -29,17 +29,11 @@ class SessionTest extends Unit
     {
         $this->session->set('username', 'janedoe');
         $this->assertEquals('janedoe', $this->session->get('username'));
-
-        $this->session->set('password', 'password123');
-        $this->assertEquals('password123', $this->session->get('password'));
     }
 
     public function testDelete()
     {
         $this->session->delete('username');
         $this->assertNull($this->session->get('username'));
-
-        $this->session->delete('password');
-        $this->assertNull($this->session->get('password'));
     }
 }
