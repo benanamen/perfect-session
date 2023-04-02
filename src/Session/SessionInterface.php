@@ -6,7 +6,9 @@ namespace PerfectApp\Session;
 
 interface SessionInterface
 {
-    public function get(string $key);
-    public function set(string $key, $value);
-    public function delete(string $key);
+    public function get(string $key): mixed;
+
+    public function set(string $key, mixed $value): void;
+
+    public function delete(string $key): void;
 }
