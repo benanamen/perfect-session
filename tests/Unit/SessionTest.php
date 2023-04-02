@@ -9,9 +9,6 @@ use PerfectApp\Session\Session;
 
 class SessionTest extends Unit
 {
-    /**
-     * @var Session
-     */
     private Session $session;
 
     protected function _before()
