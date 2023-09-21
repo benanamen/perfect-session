@@ -26,8 +26,12 @@ class Session implements SessionInterface
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
-        $var = $sessionData ?? $_SESSION;
-        $this->sessionData = &$var;
+
+        if ($sessionData !== null) {
+            $_SESSION = $sessionData;
+        }
+
+        $this->sessionData = &$_SESSION;
     }
 
     /**
