@@ -15,13 +15,13 @@
     }
   ],
   "require": {
-    "php": ">=8.0.0",
-    "phpstan/phpstan": "^1.10"
+    "php": ">=8.0.0"
   },
   "require-dev": {
     "codeception/codeception": "^5.0",
     "codeception/module-asserts": "*",
-    "jaschilz/php-coverage-badger": "^2.0"
+    "jaschilz/php-coverage-badger": "^2.0",
+    "phpstan/phpstan": "^2.1"
   },
   "scripts": {
     "test": [
