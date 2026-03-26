@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace PerfectApp\Session;
 
-use InvalidArgumentException;
+use RuntimeException;
 
 /**
  * Class Session
@@ -12,51 +12,93 @@ use InvalidArgumentException;
  */
 class Session implements SessionInterface
 {
-    /**
-     * @var array|null
-     */
-    private ?array $sessionData;
-
-    /**
-     * Session constructor.
-     * @param array|null $sessionData
-     */
-    public function __construct(?array $sessionData = null)
+    public function __construct(?array $sessionData = null, bool $autoStart = true)
     {
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
+        if ($autoStart) {
+            $this->start();
         }
 
         if ($sessionData !== null) {
+            $this->start();
             $_SESSION = $sessionData;
         }
-
-        $this->sessionData = &$_SESSION;
     }
 
-    /**
-     * @param string $key
-     * @return mixed|null
-     */
+    public function start(): void
+    {
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            return;
+        }
+
+        if ($this->startNativeSession() === false) {
+            throw new RuntimeException('Failed to start session.');
+        }
+    }
+
     public function get(string $key): mixed
     {
-        return $this->sessionData[$key] ?? null;
+        $this->start();
+
+        return $_SESSION[$key] ?? null;
     }
 
-    /**
-     * @param string $key
-     * @param mixed $value
-     */
     public function set(string $key, mixed $value): void
     {
-        $this->sessionData[$key] = $value;
+        $this->start();
+        $_SESSION[$key] = $value;
     }
 
-    /**
-     * @param string $key
-     */
     public function delete(string $key): void
     {
-        unset($this->sessionData[$key]);
+        $this->start();
+        unset($_SESSION[$key]);
+    }
+
+    public function has(string $key): bool
+    {
+        $this->start();
+
+        return array_key_exists($key, $_SESSION);
+    }
+
+    public function clear(): void
+    {
+        $this->start();
+        $_SESSION = [];
+    }
+
+    public function regenerateId(bool $deleteOldSession = true): void
+    {
+        $this->start();
+        if ($this->regenerateNativeId($deleteOldSession) === false) {
+            throw new RuntimeException('Failed to regenerate session ID.');
+        }
+    }
+
+    public function destroy(): void
+    {
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            return;
+        }
+
+        $_SESSION = [];
+        if ($this->destroyNativeSession() === false) {
+            throw new RuntimeException('Failed to destroy session.');
+        }
+    }
+
+    protected function startNativeSession(): bool
+    {
+        return session_start();
+    }
+
+    protected function regenerateNativeId(bool $deleteOldSession): bool
+    {
+        return session_regenerate_id($deleteOldSession);
+    }
+
+    protected function destroyNativeSession(): bool
+    {
+        return session_destroy();
     }
 }
